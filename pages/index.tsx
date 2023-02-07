@@ -3,6 +3,10 @@
 import React, {useState} from "react"
 
   export default function Todo() {
+  
+    const current = new Date();
+    const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
     const[todo, setTodo] = useState('')
       const[todos, setTodos] = useState ([
         {todoText : "To do 1", completed: false},
@@ -56,6 +60,8 @@ import React, {useState} from "react"
   return (
     <>
     <h1> To Do List</h1>
+    <br/>
+    <h2> Today's Date is : {date} </h2>
     <br/>
 
      <input placeholder=" Additions to the To Do List." value = {todo} onChange = {(e) => setTodo(e.target.value)} />
